@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/szbence03/chat-app/issues"
   },
-  "homepage": "https://github.com/szbence03/chat-app#readme"
+  "homepage": "https://github.com/szbence03/chat-app#readme",
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
 }
