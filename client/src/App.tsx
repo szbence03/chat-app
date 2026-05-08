@@ -1,6 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './index.css';
+import './login.css';
+import './new-post.css';
+import './post.css';
+import './register.css';
 
 import Header from './components/Header';
 import ForumPage from './pages/ForumPage';
