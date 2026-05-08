@@ -1,0 +1,355 @@
+/* ── Reset & tokens ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #f5f4f0;
+  --surface: #ffffff;
+  --border: #e2e0da;
+  --text: #1a1916;
+  --muted: #7a7870;
+  --accent: #2d6a4f;
+  --accent-hov: #245c43;
+  --danger: #c0392b;
+  --radius: 6px;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --font: 'Georgia', serif;
+  --mono: 'Menlo', monospace;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
+
+/* ── Layout ── */
+.main {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.section-head h2 {
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.section-head span {
+  font-size: 0.8rem;
+  font-family: var(--mono);
+  color: var(--muted);
+}
+
+/* ── Header ── */
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-header__logo {
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.site-header__user {
+  font-size: 0.85rem;
+  font-family: var(--mono);
+  color: var(--muted);
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  background: none;
+  transition:
+    background 0.15s,
+    border-color 0.15s,
+    color 0.15s;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.btn-primary:hover {
+  background: var(--accent-hov);
+  border-color: var(--accent-hov);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--muted);
+  border-color: var(--border);
+}
+.btn-ghost:hover {
+  border-color: #b5b3ad;
+  color: var(--text);
+}
+
+.btn-danger {
+  background: transparent;
+  color: var(--danger);
+  border-color: #e8bcb8;
+}
+.btn-danger:hover {
+  background: #fdf1f0;
+}
+
+.btn-sm {
+  padding: 0.3rem 0.7rem;
+  font-size: 0.78rem;
+}
+.btn-full {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ── Card ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+}
+
+/* ── Post card ── */
+.post-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.25rem 1.5rem;
+  transition: border-color 0.15s;
+}
+
+.post-card + .post-card {
+  margin-top: 0.75rem;
+}
+.post-card:hover {
+  border-color: #b5b3ad;
+}
+
+.post-card__title {
+  font-size: 1.05rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.post-card__meta {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  margin-bottom: 0.75rem;
+}
+
+.post-card__body {
+  font-size: 0.95rem;
+  color: #3a3835;
+}
+
+.post-card__actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* ── Forms ── */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-family: var(--mono);
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  font-family: var(--font);
+  font-size: 0.95rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  outline: none;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.12);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-error {
+  font-size: 0.82rem;
+  color: var(--danger);
+  font-family: var(--mono);
+  margin-top: 0.35rem;
+}
+
+/* ── Alert ── */
+.alert {
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  font-family: var(--mono);
+  margin-bottom: 1rem;
+}
+.alert-success {
+  background: #eaf4ee;
+  color: #1e5c38;
+  border: 1px solid #b8dfc7;
+}
+.alert-error {
+  background: #fdf1f0;
+  color: var(--danger);
+  border: 1px solid #e8bcb8;
+}
+
+/* ── Empty state ── */
+.empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ── Auth pages ── */
+.auth-wrap {
+  max-width: 380px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.auth-wrap h1 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.auth-switch {
+  margin-top: 1rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.auth-switch a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.auth-switch a:hover {
+  text-decoration: underline;
+}
+
+/* ── Modal ── */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 18, 15, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 1rem;
+}
+
+.modal {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);
+  width: 100%;
+  max-width: 480px;
+  padding: 1.75rem;
+}
+
+.modal h2 {
+  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
+}
+
+.modal-footer {
+  margin-top: 1.25rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 500px) {
+  .site-header {
+    padding: 0 1rem;
+  }
+  .card,
+  .post-card {
+    padding: 1rem;
+  }
+  .main {
+    margin: 1rem auto;
+  }
+}

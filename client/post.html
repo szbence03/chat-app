@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bejegyzés</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="index.html" class="logo">Fórum</a>
+
+      <nav>
+        <span>Üdv, <strong>user</strong></span>
+        <a href="new-post.html" class="btn btn-primary btn-sm"
+          >+ Új bejegyzés</a
+        >
+        <button class="btn btn-ghost btn-sm">Kilépés</button>
+      </nav>
+    </header>
+
+    <section class="main">
+      <a href="index.html" class="btn btn-ghost btn-sm"> ← Vissza </a>
+
+      <div class="card">
+        <h1>Hogyan konfiguráljuk a CORS-t Express-ben?</h1>
+
+        <p>ricsi@email.com · 2026-05-09</p>
+
+        <p>
+          Az express cors() middleware-t a teljes app előtt kell regisztrálni.
+        </p>
+
+        <hr />
+
+        <p>
+          Ha csak bizonyos route-okra akarod alkalmazni, a router-szintű
+          middleware használható, de figyelni kell a preflight OPTIONS kérésekre
+          is.
+        </p>
+      </div>
+
+      <div>
+        <button
+          class="btn btn-ghost btn-sm"
+          onclick="document.getElementById('edit-modal').style.display = 'flex'"
+        >
+          Szerkesztés
+        </button>
+
+        <button class="btn btn-danger btn-sm">Törlés</button>
+      </div>
+    </section>
+
+    <div class="modal-backdrop" id="edit-modal">
+      <div class="modal">
+        <h2>Bejegyzés szerkesztése</h2>
+
+        <div class="form-group">
+          <label for="edit-title">Cím</label>
+          <input
+            type="text"
+            id="edit-title"
+            value="Hogyan konfiguráljuk a CORS-t Express-ben?"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="edit-content">Tartalom</label>
+          <textarea id="edit-content">
+Az express cors() middleware-t a teljes app előtt kell regisztrálni...
+        </textarea
+          >
+        </div>
+
+        <div class="modal-footer">
+          <button
+            class="btn btn-ghost"
+            onclick="
+              document.getElementById('edit-modal').style.display = 'none'
+            "
+          >
+            Mégse
+          </button>
+
+          <button class="btn btn-primary">Mentés</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

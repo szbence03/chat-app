@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Új bejegyzés</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="index.html" class="logo">Fórum</a>
+
+      <nav>
+        <span>Üdv, <strong>user</strong></span>
+        <button class="btn btn-ghost btn-sm">Kilépés</button>
+      </nav>
+    </header>
+
+    <section class="main">
+      <div class="section-head">
+        <h2>Új bejegyzés</h2>
+      </div>
+
+      <div class="card">
+        <div class="form-group">
+          <label for="post-title">Cím</label>
+          <input type="text" id="post-title" placeholder="Bejegyzés címe" />
+        </div>
+
+        <div class="form-group">
+          <label for="post-content">Tartalom</label>
+          <textarea
+            id="post-content"
+            placeholder="Írd le a gondolataidat..."
+          ></textarea>
+        </div>
+
+        <div style="display: flex; gap: 0.5rem; justify-content: flex-end">
+          <a href="index.html" class="btn btn-ghost">Mégse</a>
+          <button class="btn btn-primary">Posztolás</button>
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
