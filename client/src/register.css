@@ -1,4 +1,3 @@
-/* ── Reset & tokens ── */
 *,
 *::before,
 *::after {
@@ -29,10 +28,6 @@
   --space-5: 2rem;
 }
 
-/* ─────────────────────────────
-   Base
-───────────────────────────── */
-
 body {
   font-family: var(--font);
   background: var(--bg);
@@ -50,10 +45,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ─────────────────────────────
-   Layout
-───────────────────────────── */
-
 .auth-wrap {
   max-width: 380px;
   margin: var(--space-5) auto;
@@ -64,10 +55,6 @@ a:hover {
   font-size: 1.4rem;
   margin-bottom: var(--space-4);
 }
-
-/* ─────────────────────────────
-   Header
-───────────────────────────── */
 
 .site-header {
   height: 56px;
@@ -87,10 +74,6 @@ a:hover {
   letter-spacing: 0.03em;
 }
 
-/* ─────────────────────────────
-   Card
-───────────────────────────── */
-
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -98,10 +81,6 @@ a:hover {
   box-shadow: var(--shadow);
   padding: var(--space-4);
 }
-
-/* ─────────────────────────────
-   Form
-───────────────────────────── */
 
 .form-group {
   margin-bottom: var(--space-3);
@@ -127,17 +106,15 @@ a:hover {
   background: var(--surface);
 
   outline: none;
-  transition: border-color 0.15s, box-shadow 0.15s;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
 }
 
 .form-group input:focus {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.12);
 }
-
-/* ─────────────────────────────
-   Button System
-───────────────────────────── */
 
 .btn {
   display: inline-flex;
@@ -168,14 +145,9 @@ a:hover {
   border-color: var(--accent-hov);
 }
 
-/* full width utility */
 .btn-full {
   width: 100%;
 }
-
-/* ─────────────────────────────
-   Auth switch text
-───────────────────────────── */
 
 .auth-switch {
   margin-top: var(--space-3);
@@ -183,10 +155,6 @@ a:hover {
   font-size: 0.88rem;
   color: var(--muted);
 }
-
-/* ─────────────────────────────
-   Responsive
-───────────────────────────── */
 
 @media (max-width: 480px) {
   .auth-wrap {

@@ -5,7 +5,22 @@ const BASE = import.meta.env.DEV ? '' : '';
 export const API = {
   url: (path: string) => `${BASE}${path}`,
 
-  token: () => localStorage.getItem('token'),
+  token: () => {
+    const t = localStorage.getItem('token');
+    if (!t) return null;
+    try {
+      const payload = JSON.parse(atob(t.split('.')[1]));
+      // Check if token is expired (payload.exp is in seconds, Date.now() is in ms)
+      if (payload.exp && payload.exp * 1000 < Date.now()) {
+        localStorage.removeItem('token');
+        return null;
+      }
+      return t;
+    } catch {
+      localStorage.removeItem('token');
+      return null;
+    }
+  },
 
   headers: () => ({
     'Content-Type': 'application/json',
